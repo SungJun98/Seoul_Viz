@@ -47,7 +47,7 @@ def insta_search(word):
     url = 'https://www.instagram.com/explore/tags/' + word
     return url 
 
-url = insta_search('서울핫플')
+url = insta_search('서울맛집')
 driver.get(url)
 time.sleep(40)
 
@@ -60,16 +60,17 @@ select_first(driver)
 ################################################################################
 
 def making_css_selector(mount):
-    loc_sel = '#mount_0_0_' + mount + ' > div > div:nth-child(1) > div > div:nth-child(4) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div > div > div.pi61vmqs.od1n8kyl.h6an9nv3.j4yusqav.djyw54ux.c9k30104.rxghi256.jhx0qe0y.mbxd2wpa.hb7lyos6.rfyvs5rk.sspdcydq.n34oi56o.c3wyshyw.im6prb7w.kzdz7bm1.k01ojvdi.alxbew3a.t78t6opn > div > article > div > div._aata > div > div > div._aasx > div._aat8 > div > div > a > div > time'
-    date_sel = '#mount_0_0_' + mount + ' > div > div:nth-child(1) > div > div:nth-child(4) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div > div > div.pi61vmqs.od1n8kyl.h6an9nv3.j4yusqav.djyw54ux.c9k30104.rxghi256.jhx0qe0y.mbxd2wpa.hb7lyos6.rfyvs5rk.sspdcydq.n34oi56o.c3wyshyw.im6prb7w.kzdz7bm1.k01ojvdi.alxbew3a.t78t6opn > div > article > div > div._aata > div > div > div._aasx > div._aat8 > div > div > a > div > time'
-    main_sel = '#mount_0_0_' + mount + ' > div > div:nth-child(1) > div > div:nth-child(4) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div > div > div.pi61vmqs.od1n8kyl.h6an9nv3.j4yusqav.djyw54ux.c9k30104.rxghi256.jhx0qe0y.mbxd2wpa.hb7lyos6.rfyvs5rk.sspdcydq.n34oi56o.c3wyshyw.im6prb7w.kzdz7bm1.k01ojvdi.alxbew3a.t78t6opn > div > article > div > div._aata > div > div > div._aasx > div._aat6 > ul > div > li > div > div > div._a9zr > div._a9zs'
-    next_arrow_sel = '#mount_0_0_' + mount + ' > div > div:nth-child(1) > div > div:nth-child(4) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div > div > div._a3gq._ab-1 > div > div > div._aaqg._aaqh > button > div'
+    loc_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._aata > div > div > div._aasi > div > header > div._aaqy._aaqz > div._aaql > div > div._aaqm > div > a'
+    date_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._aata > div > div > div._aasx > div._aat8 > div > div > a > div > time'
+    main_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._aata > div > div > div._aasx > div._aat6 > ul > div > li > div > div > div._a9zr > div._a9zs > span'
+    next_arrow_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div:nth-child(1) > div > div > div._aaqg._aaqh'
+    
     return loc_sel, date_sel, main_sel, next_arrow_sel
 
-loc_sel, date_sel, main_sel, next_arrow_sel = making_css_selector('Sm')
+loc_sel, date_sel, main_sel, next_arrow_sel = making_css_selector('c\+')
 
 # 위치 정보
-def get_location_data(driver):
+def get_location_data(driver=driver):
     try:
         location_object = driver.find_element_by_css_selector(loc_sel)
         location_info = location_object.text
@@ -82,7 +83,7 @@ def get_location_data(driver):
 
 
 # 날짜 정보
-def get_date_info(driver):
+def get_date_info(driver=driver):
     try:
         date_object = driver.find_element_by_css_selector(date_sel)
         date_time = date_object.get_attribute("datetime")
@@ -94,9 +95,8 @@ def get_date_info(driver):
     return date_time, date_title
 
 
-
 # 본문 및 해시태그
-def get_main_text(driver, instagram_tags):
+def get_main_text(driver=driver, instagram_tags=[]):
     try:
         main_text_object = driver.find_element_by_css_selector(main_sel)
         main_text = main_text_object.text
@@ -119,16 +119,14 @@ def get_main_text(driver, instagram_tags):
     return main_text, instagram_tags
 
 
-
 # 다음버튼 클릭
-def click_next_arrow_button(driver):
+def click_next_arrow_button(driver=driver):
     try:
         right= driver.find_element_by_css_selector(next_arrow_sel)
         right.click()
         time.sleep(5.0)
     except:
         pass
-
 
 
 def save_extract_data_to_csv_file(location_infos, location_hrefs, 
@@ -153,7 +151,11 @@ def save_extract_tag_data_to_csv_file(instagram_tags, save_file_name_tag):
 def make_radom_sleep_time(start, end):
     return random.randrange(start=start, stop=end+1)
 
-
+# test
+get_location_data()
+get_date_info()
+get_main_text()
+click_next_arrow_button()
 ################################################################################
 # Crawling 실행
 ################################################################################
@@ -167,7 +169,7 @@ save_tag_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Vi
 
 
 count_extract_num = 0
-wish_num = 200
+wish_num = 150
 
 while True:
     if count_extract_num > wish_num:
