@@ -7,7 +7,7 @@ import pandas as pd
 
 user_id="lsj9862" ; user_password="Slanjdi2553@"
 
-driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\Instagram_Crawler\chromedriver.exe')
+driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe')
 
 url = 'https://www.instagram.com'
 
@@ -47,7 +47,7 @@ def insta_search(word):
     url = 'https://www.instagram.com/explore/tags/' + word
     return url 
 
-url = insta_search('서울맛집')
+url = insta_search('서울카페')
 driver.get(url)
 time.sleep(40)
 
@@ -60,14 +60,13 @@ select_first(driver)
 ################################################################################
 
 def making_css_selector(mount):
-    loc_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._aata > div > div > div._aasi > div > header > div._aaqy._aaqz > div._aaql > div > div._aaqm > div > a'
-    date_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._aata > div > div > div._aasx > div._aat8 > div > div > a > div > time'
-    main_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._aata > div > div > div._aasx > div._aat6 > ul > div > li > div > div > div._a9zr > div._a9zs > span'
+    loc_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._ae65 > div > div > div._aasi > div > header > div._aaqy._aaqz > div._aaql > div > div._aaqm > div > a'
+    date_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._ae65 > div > div > div._ae2s._ae3v._ae3w > div._ae5u._ae5v._ae5w > div > div > a > div > time'
+    main_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div.hw7435fk.ba4ynyj4.mm05nxu8.l2tm8nht.o9w3sbdw.nu7423ey.dl2p71xr.h0c7ht3v.j8nb7h05.gffp4m6x.l10tt5db.mfclru0v.mv53e3c5.q6ul9yy4.pry8b2m5.i7rjuzed.p8zq7ayg.q2git0d3.fdbvkn0i > div > article > div > div._ae65 > div > div > div._ae2s._ae3v._ae3w > div._ae5q._ae5r._ae5s > ul > div > li > div > div > div._a9zr'
     next_arrow_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div:nth-child(1) > div > div > div._aaqg._aaqh'
-    
     return loc_sel, date_sel, main_sel, next_arrow_sel
 
-loc_sel, date_sel, main_sel, next_arrow_sel = making_css_selector('c\+')
+loc_sel, date_sel, main_sel, next_arrow_sel = making_css_selector('Fb')
 
 # 위치 정보
 def get_location_data(driver=driver):
@@ -163,13 +162,13 @@ location_infos, location_hrefs = [], []
 date_times, date_titles = [], []
 main_texts, instagram_tags = [], []
 
-driver_path = r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\Instagram_Crawler\chromedriver.exe'
-save_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\crawled_data\instagram\extracted_main"
-save_tag_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\crawled_data\instagram\extracted_tag"
+driver_path = r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe'
+save_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\instagram\extracted_main_220819_3"
+save_tag_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\instagram\extracted_tag_220819_3"
 
 
 count_extract_num = 0
-wish_num = 150
+wish_num = 100
 
 while True:
     if count_extract_num > wish_num:
@@ -200,6 +199,7 @@ save_extract_data_to_csv_file(location_infos=location_infos, location_hrefs=loca
                              main_texts=main_texts, save_file_name=save_file_name)
 
 save_extract_tag_data_to_csv_file(instagram_tags=instagram_tags, save_file_name_tag=save_tag_file_name)
+print('Done!!!')
 
 driver.close()
 driver.quit()

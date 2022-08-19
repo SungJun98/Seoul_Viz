@@ -6,7 +6,7 @@ import random, os
 import pandas as pd
 
 
-driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\Instagram_Crawler\chromedriver.exe')
+driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe')
 url = 'https://m.place.naver.com/my/place/detailList/1fea0b9f6dd7481180a819f07e352e2d?close'
 driver.get(url)
 
