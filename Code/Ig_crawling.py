@@ -47,7 +47,7 @@ def insta_search(word):
     url = 'https://www.instagram.com/explore/tags/' + word
     return url 
 
-url = insta_search('서울카페')
+url = insta_search('서울맛집')
 driver.get(url)
 time.sleep(40)
 
@@ -66,7 +66,7 @@ def making_css_selector(mount):
     next_arrow_sel = '#mount_0_0_' + mount + ' > div > div > div > div:nth-child(4) > div > div > div.bdao358l.om3e55n1.g4tp4svg > div > div.th8rvtx1.f7rl1if4.adechonz.rufpak1n.qtovjlwq.qbmienfq.rfyhaz4c.rdmi1yqr.ohrdq8us.nswx41af.fawcizw8.l1aqi3e3.om3e55n1.sdu1flz4.dahkl6ri > div > div > div > div > div:nth-child(1) > div > div > div._aaqg._aaqh'
     return loc_sel, date_sel, main_sel, next_arrow_sel
 
-loc_sel, date_sel, main_sel, next_arrow_sel = making_css_selector('Fb')
+loc_sel, date_sel, main_sel, next_arrow_sel = making_css_selector('e\/')
 
 # 위치 정보
 def get_location_data(driver=driver):
@@ -163,8 +163,8 @@ date_times, date_titles = [], []
 main_texts, instagram_tags = [], []
 
 driver_path = r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe'
-save_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\instagram\extracted_main_220819_3"
-save_tag_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\instagram\extracted_tag_220819_3"
+save_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\instagram\extracted_main_220821_2"
+save_tag_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\instagram\extracted_tag_220821_2"
 
 
 count_extract_num = 0
