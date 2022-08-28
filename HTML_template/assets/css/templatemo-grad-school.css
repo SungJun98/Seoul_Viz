@@ -13,6 +13,19 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* 내가 만든거 */
+.section.title {
+  color : #f5a425;
+  margin: 0;
+  padding: 0;
+  margin-bottom : 25px;
+}
+
+.row {
+  color : #fff
+}
+
+
 /* Basic */
 
 a {
@@ -907,8 +920,9 @@ section.video {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #172238;
-    padding: 120px 0px;
+    padding: 25px 0px;
 }
+
 
 section.video .left-content {
   color: #fff;
