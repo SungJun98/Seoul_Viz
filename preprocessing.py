@@ -4,7 +4,6 @@ import os
 import pickle
 import geopandas as gpd
 from tqdm import tqdm 
-mapbox_api_token = 'pk.eyJ1IjoiYm94Ym94NCIsImEiOiJjbDdoY2J1bm8wNzlrM3BycDQzYmduNTJtIn0.Q7koz2UNld3b1xmqF7-KXA'
 
 # 대한민국 행정동 경계 파일 
 # https://github.com/vuski/admdongkor/tree/master/ver20220401
