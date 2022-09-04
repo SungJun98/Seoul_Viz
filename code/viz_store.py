@@ -11,7 +11,7 @@ import os
 os.chdir(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz')
 MAPBOX_API_KEY = 'pk.eyJ1IjoibHNqOTg2MiIsImEiOiJja3dkNjMxMDczOHd1MnZtcHl0YmllYWZjIn0.4IFNend5knY9T_h3mv8Bwg'
 
-'''
+
 ### 1. Naver Top100
 # 1.1. Load Data
 df_1 = pd.read_csv(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\naver_Gabozza_detail.csv')
@@ -42,7 +42,7 @@ icon_layer_1 = pdk.Layer(
     pickable=True,
     auto_highlight=True
 )
-'''
+
 
 
 '''
@@ -59,7 +59,7 @@ def image_to_data_url(filename):
         img = f.read()
     return prefix + base64.b64encode(img).decode('utf-8')
 
-'''
+
 ### 2. OliveYoung
 # 2.1. Load Data
 df_2 = pd.read_csv(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\oliveyoung.csv')
@@ -92,7 +92,7 @@ icon_layer_2 = pdk.Layer(
     pickable=True,
     auto_highlight=True
 )
-'''
+
 
 
 
@@ -131,7 +131,7 @@ icon_layer_3 = pdk.Layer(
 )
 
 
-'''
+
 ### 4. BurgerKing
 # 4.1. Load Data
 df_4 = pd.read_csv(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\burgerking.csv')
@@ -164,7 +164,39 @@ icon_layer_4 = pdk.Layer(
     pickable=True,
     auto_highlight=True
 )
-'''
+
+
+
+### 5. Starbucks
+# 5.1. Load Data
+df_5 = pd.read_csv(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\starbucks.csv')
+coordinates = [[x, y] for x, y in zip(df_5.longitude, df_5.latitude)]
+df_5['coordinates'] = coordinates
+
+STARBUCKS_ICON = r'https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=2008'
+icon_data = {
+    "url": STARBUCKS_ICON,
+    "width": 128,
+    "height": 128,
+    "anchorY": 128,
+}
+
+df_5['icon_data'] = None
+for i in df_5.index:
+    df_5["icon_data"][i] = icon_data
+
+# 5.2. Make Layer
+icon_layer_5 = pdk.Layer(
+    type="IconLayer",
+    data=df_5,
+    get_icon="icon_data",
+    get_size=4,
+    size_scale=3,
+    get_position='coordinates',
+    pickable=True,
+    auto_highlight=True
+)
+
 
 
 ### Set the viewport location
@@ -175,7 +207,5 @@ view_state = pdk.ViewState(
     zoom=10)
 
 # Render
-r = pdk.Deck(layers=[icon_layer_1, icon_layer_2, icon_layer_3, icon_layer_4], initial_view_state=view_state)
+r = pdk.Deck(layers=[icon_layer_1, icon_layer_2, icon_layer_3, icon_layer_4, icon_layer_5], initial_view_state=view_state)
 r.to_html('demo.html')
-
-# oliveyoung, subway, burgerking은 다 안 된다....
