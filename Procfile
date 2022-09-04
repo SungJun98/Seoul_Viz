@@ -1,1 +1,1 @@
-worker: python final.py
+worker: python mapping.py
