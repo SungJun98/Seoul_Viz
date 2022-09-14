@@ -86,12 +86,18 @@ app.layout = html.Div(
                     marks = {int(month) : str(month) for month in df["대상연월"].unique()},
                     id = "month_slider")
             ]),
-        ], style = {"display" : "inline-block", 'width' : '30%', "vertical-align" : "top"}),
+        ], style = {"display" : "inline-block", 'width' : '25%', "vertical-align" : "top"}),
                                   
         html.Div(children = [
             html.H4('Weekday', style = {'color' : colors['text'], 'textAlign': 'top'}),
             html.Div(style = {"width" : "80%", "display" : "inline-block", "vertical-align" : "top"}, children = [
-                dcc.Dropdown(['월', '화', '수', '목', '금', '토', '일'], '월', id = "day_dropdown")
+                dcc.Dropdown([{'label':'월(Mon)', 'value' : '월'},
+                              {'label':'화(Tue)', 'value' : '화'},
+                              {'label':'수(Wed)', 'value' : '수'},
+                              {'label':'목(Thur)', 'value' : '목'},
+                              {'label':'금(Fri)', 'value' : '금'},
+                              {'label':'토(Sat)', 'value' : '토'},
+                              {'label':'일(Sun)', 'value' : '일'}], '월', id = "day_dropdown")
             ]),
         ], style = {"display" : "inline-block", 'width' : '10%', "vertical-align" : "top"}),
         
@@ -109,6 +115,17 @@ app.layout = html.Div(
                 dcc.Input(id = "max_rows", value = 500, type = "number", style = {"width" : "80%"})
             ]),
         ], style = {"display" : "inline-block", 'width' : '10%', "vertical-align" : "top"}),
+        
+        html.Div(children = [
+            html.H4('Color Description', style = {'color' : colors['text'], 'display': 'inline-block', "vertical-align" : "top"}),
+            html.Div(style = {"width" : "80%", "display" : "inline-block", "vertical-align" : "bottom", 'color' : colors['text'],
+                              "height" : "50px"}, children = [
+                dcc.Markdown('''
+                      source color : red      
+                      target color : green 
+                ''')
+                ])
+        ], style = {"display" : "inline-block", 'width' : '15%', "vertical-align" : "top"}),
 
         html.Br(),
         html.Br(),
@@ -126,7 +143,17 @@ app.layout = html.Div(
             )
 ])
 
-
+html.Div([
+    dcc.Markdown('''
+        #### Dash and Markdown
+        Dash supports [Markdown](http://commonmark.org/help).
+        Markdown is a simple way to write and format text.
+        It includes a syntax for things like **bold text** and *italics*,
+        [links](http://commonmark.org/help), inline `code` snippets, lists,
+        quotes, and more.
+    ''')
+])
+                 
 @app.callback(
     Output(component_id = "deck-gl", component_property = "children"),
     Input(component_id = "month_slider", component_property = "value"),
