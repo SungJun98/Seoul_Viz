@@ -1,24 +1,16 @@
 import dash
+import os
 from dash import dcc, html
 from dash.dependencies import Input, Output
 import pickle
-import pandas as pd
 import dash_deck
 import pydeck as pdk
-import geopandas as gpd
-
+os.chdir('F:/Competitions/SeoulHotPlace')
 mapbox_api_token = 'pk.eyJ1IjoiYm94Ym94NCIsImEiOiJjbDdoY2J1bm8wNzlrM3BycDQzYmduNTJtIn0.Q7koz2UNld3b1xmqF7-KXA'
-with open('F:/Competitions/SeoulHotPlace/final_ver2.pickle', 'rb') as f:
+with open('./final_ver2.pickle', 'rb') as f:
     df = pickle.load(f)
-    
-# Seoul boundary data 
-dff = gpd.read_file('https://raw.githubusercontent.com/heumsi/geo_data_visualisation_introduction/master/data/older_seoul.geojson')
-def multipolygon_to_coordinates(x):
-    lon, lat = x[0].exterior.xy
-    return [[x, y] for x, y in zip(lon, lat)]
-dff['coordinates'] = dff['geometry'].apply(multipolygon_to_coordinates)
-del dff['geometry'], dff['인구'], dff['남자'], dff['여자']
-dff = pd.DataFrame(dff)
+with open('./seoul_boundary.pickle', 'rb') as f:
+    dff = pickle.load(f)
 
 def create_map(month, day, time, top):
     new_df = df[(df['대상연월'] == month) &
@@ -143,16 +135,7 @@ app.layout = html.Div(
             )
 ])
 
-html.Div([
-    dcc.Markdown('''
-        #### Dash and Markdown
-        Dash supports [Markdown](http://commonmark.org/help).
-        Markdown is a simple way to write and format text.
-        It includes a syntax for things like **bold text** and *italics*,
-        [links](http://commonmark.org/help), inline `code` snippets, lists,
-        quotes, and more.
-    ''')
-])
+
                  
 @app.callback(
     Output(component_id = "deck-gl", component_property = "children"),

@@ -4,12 +4,13 @@ import os
 import pickle
 import geopandas as gpd
 from tqdm import tqdm 
+os.chdir('F:/Competitions/SeoulHotPlace')
 mapbox_api_token = 'pk.eyJ1IjoiYm94Ym94NCIsImEiOiJjbDdoY2J1bm8wNzlrM3BycDQzYmduNTJtIn0.Q7koz2UNld3b1xmqF7-KXA'
 
 # 대한민국 행정동 경계 파일 
 # https://github.com/vuski/admdongkor/tree/master/ver20220401
 
-geo_data = r'F:\Competitions\SeoulHotPlace\dataset/HangJeongDong_ver20220401.txt'
+geo_data = 'dataset/HangJeongDong_ver20220401.txt'
 with open(geo_data,encoding="UTF-8") as json_file:   
     df = gpd.read_file(json_file)
 
@@ -119,5 +120,21 @@ idx = final[(final['성별'] == 'M') |
 final.drop(idx, inplace=True)
 final.drop('성별', axis=1, inplace=True)
 
-with open('F:/Competitions/SeoulHotPlace/final_ver2.pickle', 'wb') as f:
+with open('./final_ver2.pickle', 'wb') as f:
     pickle.dump(final, f, pickle.HIGHEST_PROTOCOL)
+
+
+# Seoul boundary data 
+dff = gpd.read_file('https://raw.githubusercontent.com/heumsi/geo_data_visualisation_introduction/master/data/older_seoul.geojson')
+def multipolygon_to_coordinates(x):
+    lon, lat = x[0].exterior.xy
+    return [[x, y] for x, y in zip(lon, lat)]
+dff['coordinates'] = dff['geometry'].apply(multipolygon_to_coordinates)
+del dff['geometry'], dff['인구'], dff['남자'], dff['여자']
+dff = pd.DataFrame(dff)
+
+with open('./seoul_boundary.pickle', 'wb') as f:
+    pickle.dump(dff, f, pickle.HIGHEST_PROTOCOL)
+
+
+

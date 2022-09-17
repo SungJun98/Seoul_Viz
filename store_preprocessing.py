@@ -1,31 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Aug 18 15:47:14 2022
-
-@author: SungJunLim
-"""
 import base64
 import pandas as pd
-import pydeck as pdk
-import dash
+import os
 import pickle
-from dash import dcc, html
-from dash.dependencies import Input, Output, State
-import dash_deck
-import geopandas as gpd
 
-
+os.chdir('F:/Competitions/SeoulHotPlace')
 MAPBOX_API_KEY = 'pk.eyJ1IjoibHNqOTg2MiIsImEiOiJja3dkNjMxMDczOHd1MnZtcHl0YmllYWZjIn0.4IFNend5knY9T_h3mv8Bwg'
-dff = gpd.read_file('https://raw.githubusercontent.com/heumsi/geo_data_visualisation_introduction/master/data/older_seoul.geojson')
-
-def multipolygon_to_coordinates(x):
-    lon, lat = x[0].exterior.xy
-    return [[x, y] for x, y in zip(lon, lat)]
-dff['coordinates'] = dff['geometry'].apply(multipolygon_to_coordinates)
-
-del dff['geometry'], dff['인구'], dff['남자'], dff['여자']
-
-dff = pd.DataFrame(dff)
 
 def image_to_data_url(filename):
     ext = filename.split('.')[-1]

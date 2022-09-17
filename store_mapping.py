@@ -1,26 +1,18 @@
-import pandas as pd
+import os
 import pydeck as pdk
 import dash
 import pickle 
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import dash_deck
-import geopandas as gpd
-
+os.chdir('F:/Competitions/SeoulHotPlace')
 MAPBOX_API_KEY = 'pk.eyJ1IjoibHNqOTg2MiIsImEiOiJja3dkNjMxMDczOHd1MnZtcHl0YmllYWZjIn0.4IFNend5knY9T_h3mv8Bwg'
+
 with open(r'F:\Competitions\SeoulHotPlace/df.pickle', 'rb') as f:
     df = pickle.load(f) 
+with open('./seoul_boundary.pickle', 'rb') as f:
+    dff = pickle.load(f)
     
-# Seoul boundary data 
-dff = gpd.read_file('https://raw.githubusercontent.com/heumsi/geo_data_visualisation_introduction/master/data/older_seoul.geojson')
-def multipolygon_to_coordinates(x):
-    lon, lat = x[0].exterior.xy
-    return [[x, y] for x, y in zip(lon, lat)]
-dff['coordinates'] = dff['geometry'].apply(multipolygon_to_coordinates)
-del dff['geometry'], dff['인구'], dff['남자'], dff['여자']
-dff = pd.DataFrame(dff)
-
-
 colors = {
     "background": "#111111",
     "text": "#ffffff"
