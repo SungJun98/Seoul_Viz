@@ -12,7 +12,7 @@ import pandas as pd
 import numpy as np
 
 
-driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe')
+driver = webdriver.Chrome(r'..\chromedriver.exe')
 url = 'https://www.burgerking.co.kr/#/store'
 driver.get(url)
 
@@ -91,4 +91,4 @@ df = pd.DataFrame({'name' : name_list,
                   'latitude' : latitude})
 
 df = df[:109]
-df.to_csv(r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\burgerking.csv")
+df.to_csv(r"..\data\burgerking.csv")

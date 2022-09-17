@@ -33,7 +33,7 @@ Counter(result).most_common(20)
 
 import json, os
 query = ["서울핫플"]
-os.chdir(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\Instagram_Crawler\crawled_data\twitter')
+os.chdir(r'..\data\twitter')
 output_file_name = "stream_result.txt"
 with open(output_file_name, "w", encoding="utf-8") as output_file:
     stream = twitter_api.GetStreamFilter(track=query)

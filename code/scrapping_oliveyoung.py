@@ -11,7 +11,7 @@ import random, os
 import pandas as pd
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe')
+driver = webdriver.Chrome(r'..\chromedriver.exe')
 url = 'https://www.oliveyoung.co.kr/store/store/getStoreMain.do?trackingCd=Store_Recommend_Best'
 driver.get(url)
 
@@ -115,4 +115,4 @@ for i in range(len(null_address)):
 
 
 # dataframe csv파일로 저장
-df.to_csv(r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\oliveyoung.csv")
+df.to_csv(r"..\data\oliveyoung.csv")

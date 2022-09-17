@@ -6,7 +6,7 @@ import random, os
 import pandas as pd
 
 
-driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe')
+driver = webdriver.Chrome(r'..\chromedriver.exe')
 url = 'https://m.place.naver.com/my/place/detailList/1fea0b9f6dd7481180a819f07e352e2d?close'
 driver.get(url)
 
@@ -54,7 +54,7 @@ df = pd.DataFrame({'name' : name_list,
                   'type' : type_list,
                   'location' : loc_list})
 
-df.to_csv(r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\crawled_data\naver_Gabozza.csv")
+df.to_csv(r"..\data\naver_Gabozza.csv")
 
 
 
@@ -64,7 +64,7 @@ df.to_csv(r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\crawled_d
 참고문
 https://wonhwa.tistory.com/29
 '''
-dat = pd.read_csv(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\crawled_data\naver_Gabozza.csv')
+dat = pd.read_csv(r'..\data\naver_Gabozza.csv')
 dat.head()
 address = dat['location']
 
@@ -100,6 +100,4 @@ for i in address:
 
 # Dataframe 생성 및 저장
 address_df = pd.DataFrame({'location': dat['name'],'type':dat['type'],'address':address,'latitude':latitude,'longitude':longitude})
-address_df.to_csv(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\crawled_data\naver_Gabozza_detail.csv')
-import os
-os.getcwd()
+address_df.to_csv(r'..\data\naver_Gabozza_detail.csv')

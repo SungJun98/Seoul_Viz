@@ -7,7 +7,7 @@ import pandas as pd
 
 user_id="lsj9862" ; user_password="Slanjdi2553@"
 
-driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe')
+driver = webdriver.Chrome(r'..\chromedriver.exe')
 
 url = 'https://www.instagram.com'
 
@@ -162,9 +162,9 @@ location_infos, location_hrefs = [], []
 date_times, date_titles = [], []
 main_texts, instagram_tags = [], []
 
-driver_path = r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe'
-save_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\instagram\extracted_main_220826_1"
-save_tag_file_name = r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\instagram\extracted_tag_220826_1"
+driver_path = r'..\chromedriver.exe'
+save_file_name = r"..\data\instagram\extracted_main_220826_1"
+save_tag_file_name = r"..\data\instagram\extracted_tag_220826_1"
 
 
 count_extract_num = 0

@@ -12,7 +12,7 @@ import pandas as pd
 import numpy as np
 
 
-driver = webdriver.Chrome(r'C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\chromedriver.exe')
+driver = webdriver.Chrome(r'..\chromedriver.exe')
 url = 'https://www.subway.co.kr/storeSearch?page=1&rgn1Nm=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C&rgn2Nm=#storeList'
 driver.get(url)
 
@@ -96,4 +96,4 @@ df = pd.DataFrame({'name' : name_list,
                   'latitude' : latitude})
 
 df = df[:164]
-df.to_csv(r"C:\Users\SungJunLim\Desktop\Lim\UOS\Side-Project\Seoul_Viz\data\subway.csv")
+df.to_csv(r"..\data\subway.csv")
