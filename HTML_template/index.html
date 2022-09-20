@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
 
 
@@ -39,8 +42,8 @@
           <ul class="sub-menu">
             <li><a href="#section2">Brief Overview</a></li>
             <li><a href="#section3">Foot Traffic</a></li>
-            <li><a href="#section3">Social Media Tag</a></li>
-            <li><a href="#section4">Facilities</a></li>
+            <li><a href="#section4">Social Media Tag</a></li>
+            <li><a href="#section5">Facilities</a></li>
           </ul>
         </li>
         <li class="has-submenu"><a href="#section5">About us</a>
@@ -85,7 +88,7 @@
               </div>
               <div class="content-hide">
                 <p>유동인구 관련 간략 소개</p>
-                <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
+                <div class="scroll-to-section"><a href="#section3">More Info.</a></div>
             </div>
             </div>
           </div>
@@ -98,7 +101,7 @@
               </div>
               <div class="content-hide">
                 <p>We crawled data from Instagram and made word cloud.</p>
-                <div class="scroll-to-section"><a href="#section3">Details</a></div>
+                <div class="scroll-to-section"><a href="#section4">Details</a></div>
               </div>
             </div>
           </div>
@@ -111,7 +114,7 @@
               </div>
               <div class="content-hide">
                 <p>관광지 및 편의시설(스타벅스) 분석한 거 간략 소개</p>
-                <div class="scroll-to-section"><a href="#section4">Search More</a></div>
+                <div class="scroll-to-section"><a href="#section5">Search More</a></div>
             </div>
             </div>
           </div>
@@ -137,15 +140,8 @@
             </ul>
             <section class='tabs-content'>
               <article id='tabs-1'>
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src="" alt="">
-                  </div>
-                  <div class="col-md-6">
-                    <h4>Foot Traffic</h4>
-                    <p>유동인구에 대해서 앞에서보다 조금 더 자세한 설명 (데이터 출처, 분석 방법 등)</p>
-                    <!-- <p>Grad School is free educational HTML template with Bootstrap 4.5.2 CSS layout. Feel free to use it for educational or commercial purposes. You may want to make <a href="https://paypal.me/templatemo" target="_parent" rel="sponsored">a little donation</a> to TemplateMo. Please tell your friends about us. Thank you.</p> -->
-                  </div>
+                <div id="map" style="height:800px;">
+                  <iframe src=".\assets\iframe\2d_foot_traffic.html" seamless="seamless" style="border:none; width:100%; height:100%; object-fit:contain;">Check your path or file</iframe>
                 </div>
               </article>
               <article id='tabs-2'>
@@ -165,18 +161,8 @@
                 </div>
               </article>
               <article id='tabs-3'>
-                <div class="row" height="1200px">
-                    <iframe src=".\assets\iframe\2d_facility.html" style="width:100vh; height:100vh">Check your path or file</iframe>
-                  <!--<div class="col-md-6">
-                    <h4>Facilities</h4>
-                    <br>
-                    <p>관광정보 관련 설명</p>
-                    <br>
-                    <p>옆에 그림 맞추려면</p>
-                    <br>
-                    <p>여기 맞춰서 적어주셔야 됩니다</p>
-                  -->
-                  </div>
+                <div id="map" style="height:800px;">
+                    <iframe src=".\assets\iframe\2d_facility.html" seamless="seamless" style="border:none; width:100%; height:100%; object-fit:contain;">Check your path or file</iframe>
                 </div>
               </article>
             </section>
@@ -246,17 +232,8 @@
         <h2>Facilities</h2>
       </div>
       <div class="row">
-        <iframe id=".\assets\iframe\demo.html"
-          width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-      
-
-
-      <div class="row">          
-          <h4><em>다양한 시설 관련 통계</em></h4>
-          <p>관광명소.
-          <br><br>그리고, 스타벅스.</p>
-          <br><br>여기에 스타벅스 히트맵 입주 예정
+        <iframe src="https://seoul-store-dash.herokuapp.com/" seamless="seamless"
+          width="100%" height="1200px" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -455,7 +432,7 @@
             <h2>Let’s Keep In Touch</h2>
           </div>
         </div>
-        <div class="col-md-6"> -->
+        <div class="col-md-6">
         
         <!-- Do you need a working HTML contact-form script?
                 	

@@ -917,7 +917,6 @@ section.courses .owl-carousel button.active {
 /* Video == Attraction */
 
 section.video {
-    background-image: url(../images/video-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #172238;
