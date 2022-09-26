@@ -7,7 +7,7 @@ from tqdm import tqdm
 os.chdir('F:/Competitions/SeoulHotPlace')
 mapbox_api_token = 'pk.eyJ1IjoiYm94Ym94NCIsImEiOiJjbDdoY2J1bm8wNzlrM3BycDQzYmduNTJtIn0.Q7koz2UNld3b1xmqF7-KXA'
 
-# 대한민국 행정동 경계 파일 
+### 1. 대한민국 행정동 경계 파일 
 # https://github.com/vuski/admdongkor/tree/master/ver20220401
 
 geo_data = 'dataset/HangJeongDong_ver20220401.txt'
@@ -22,7 +22,7 @@ def multipolygon_to_coordinates(x):
 df['coordinates'] = df['geometry'].apply(multipolygon_to_coordinates)
 del df['geometry']
 
-# 각 행정동 별 가운데 좌표 생성 
+## 각 행정동 별 가운데 좌표 생성 
 lst = []
 for i in df['coordinates']:
     idx_1 = 0
@@ -30,14 +30,14 @@ for i in df['coordinates']:
     for j in i:
         idx_1 += j[0]
         idx_2 += j[1]
-    lst.append([idx_1 / len(i), idx_2 / len(i)])
+    lst.append([np.round(idx_1 / len(i),5), np.round(idx_2 / len(i), 5)])
 
 df['MiddlePoint'] = lst
 middle = df[['adm_cd', 'adm_nm', 'MiddlePoint']]
 middle['adm_cd'] = pd.to_numeric(middle['adm_cd'])
 del df
 
-# 데이터 규합 
+## 데이터 규합 
 def preprocess(df):
     data = df.copy()
     data = data[(data['출발 행정동 코드'] >= 1100000) & 
@@ -116,15 +116,16 @@ def float_memory_reduce(data) :
 final = float_memory_reduce(int_memory_reduce(final))
 
 idx = final[(final['성별'] == 'M') |
-         (final['time'] == "새벽(03-06)")].index
+         (final['time'] == "새벽(03-06)") |
+         (final['이동인구(합)'] == 3)].index
 final.drop(idx, inplace=True)
-final.drop('성별', axis=1, inplace=True)
+final.drop(['출발 행정동 코드', '도착 행정동 코드', '성별'], axis=1, inplace=True)
 
 with open('./final_ver2.pickle', 'wb') as f:
     pickle.dump(final, f, pickle.HIGHEST_PROTOCOL)
 
 
-# Seoul boundary data 
+### 2. Seoul boundary data 
 dff = gpd.read_file('https://raw.githubusercontent.com/heumsi/geo_data_visualisation_introduction/master/data/older_seoul.geojson')
 def multipolygon_to_coordinates(x):
     lon, lat = x[0].exterior.xy
