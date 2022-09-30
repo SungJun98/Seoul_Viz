@@ -145,24 +145,16 @@
                 </div>
               </article>
               <article id='tabs-2'>
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src=".\assets\images\instagram_logo.png" alt="">
-                  </div>
-                  <div class="col-md-6">
-                    <h4>Social Media Tag</h4>
-                    <br>
-                    <p>We've tried to scrap data related to popular place in Seoul using several tags e.g. "서울맛집", "서울핫플", "서울데이트" etc. </p>
-                    <br>
-                    <p>We tried to make word cloud using self-crawled 5,000 data  </p>
-                    <br>
-                    <p>아직 crawling 진행 중이고 완료 시 pre-processing 방안 고민해야합니다.</p>
-                  </div>
-                </div>
+                <div id="map" style="height:800px;">
+                  <video src=".\assets\iframe\word_race.mp4" poster=".\assets\images\instagram_logo.png" width="100%" height="100%" loop="100" autoplay="" muted=""></video>
+                  <!-- <iframe src=".\assets\iframe\word_race.mp4" seamless="seamless" style="border:none; width:100%; height:100%; object-fit:contain;">Check your path or file</iframe> -->
+              </div>
               </article>
               <article id='tabs-3'>
-                <div id="map" style="height:800px;">
-                    <iframe src=".\assets\iframe\2d_facility.html" seamless="seamless" style="border:none; width:100%; height:100%; object-fit:contain;">Check your path or file</iframe>
+                <div id="map" style="height:800px">
+                    <p align="center" style="height:800px">
+                      <iframe src=".\assets\iframe\store_pie.html" seamless="seamless" style="border:none; width:100%; height:100%; object-fit:contain;">Check your path or file</iframe>
+                    </p>
                 </div>
               </article>
             </section>
@@ -173,54 +165,28 @@
   </section>
 
 <!-- 유동인구 Section -->
-  <section class="section coming-soon" data-section="section3">
+  <section class="section video" data-section="section3">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="continer centerIt">
-            <div>
-              <h4>유동인구 관련 dashboard 입주 예정</h4>
-
-              <!-- <div class="counter">
-
-                <div class="days">
-                  <div class="value">00</div>
-                  <span>Days</span>
-                </div>
-
-                <div class="hours">
-                  <div class="value">00</div>
-                  <span>Hours</span>
-                </div>
-
-                <div class="minutes">
-                  <div class="value">00</div>
-                  <span>Minutes</span>
-                </div>
-
-                <div class="seconds">
-                  <div class="value">00</div>
-                  <span>Seconds</span>
-                </div>
-
-              </div> -->
-            </div>
-          </div>
-        </div>
+      <div class="section title"> <!--class에 따른 css 속성 추가 필요 -->
+        <h2>Foot Traffic</h2>
       </div>
+      <!-- <div class="row">
+        <iframe src="https://seoul-foot-traffic-dash.herokuapp.com/" seamless="seamless"
+          style="border:none; width:100%; height:1200px; object-fit:contain;" allowfullscreen></iframe>
+      </div> -->
     </div>
   </section>
 
 
 <!-- SNS 분석 섹션 -->
-  <section class="section courses" data-section="section4">
+  <section class="section video" data-section="section4">
     <div class="container">
+      <div class="section title">
+        <h2>Social Network Word Cloud</h2>
+      </div>
       <div class="row">
-        <div class="col-md-12">
-          <div id="word_cloud">
-            SNS 관련 내용 입주 예정
-          </div>
-        </div>
+        <iframe src="./assets/iframe/tag_cloud.png" seamless="seamless"
+          width="100%" height="1200px" frameborder="0" style="border:none; width:100%; height:1200px; object-fit:contain;" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -233,7 +199,7 @@
       </div>
       <div class="row">
         <iframe src="https://seoul-store-dash.herokuapp.com/" seamless="seamless"
-          width="100%" height="1200px" frameborder="0" style="border:0" allowfullscreen></iframe>
+          style="border:none; width:100%; height:1200px; object-fit:contain;" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -397,32 +363,6 @@
     </div>
   </section>
 -->
-
-  <!-- <section class="section video" data-section="section5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 align-self-center">
-          <div class="left-content">
-            <span>our presentation is for you</span>
-            <h4>Watch the video to learn more <em>about Grad School</em></h4>
-            <p>You are NOT allowed to redistribute this template ZIP file on any template collection website. However, you can use this template to convert into a specific theme for any kind of CMS platform such as WordPress. You may <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact TemplateMo</a> for details.
-            <br><br>Suspendisse tincidunt, magna ut finibus rutrum, libero dolor euismod odio, nec interdum quam felis non ante.</p>
-            <div class="main-button"><a rel="nofollow" href="https://fb.com/templatemo" target="_parent">External URL</a></div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <article class="video-item">
-            <div class="video-caption">
-              <h4>Power HTML Template</h4>
-            </div>
-            <figure>
-              <a href="https://www.youtube.com/watch?v=r9LtOG6pNUw" class="play"><img src="assets/images/main-thumb.png"></a>
-            </figure>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <section class="section contact" data-section="section6">
     <div class="container">
